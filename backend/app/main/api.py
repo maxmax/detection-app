@@ -13,7 +13,7 @@ def apiInfo():
 @bp.route('/api-traffic', methods=["GET"])
 def apiDetectionTraffic():
     video_path = 'https://www.bogotobogo.com/python/OpenCV_Python/images/mean_shift_tracking/slow_traffic_small.mp4'
-    detection_traffic = detection.DetectionTraffic(video_path)
+    detection_traffic = detection.DetectionTraffic(video_path, time_seconds=6)
     car_count = detection_traffic.count_cars()
     return jsonify({'car_count': car_count})
 
